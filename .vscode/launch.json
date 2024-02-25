@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/msys64/home/abcd2/OOP Practice",
-      "program": "c:/msys64/home/abcd2/OOP Practice/build/Debug/outDebug",
+      "cwd": "c:/msys64/home/abcd2/OOP-Practice",
+      "program": "c:/msys64/home/abcd2/OOP-Practice/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
