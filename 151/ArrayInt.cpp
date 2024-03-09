@@ -6,6 +6,16 @@ ArrayInt::ArrayInt(int len) : m_len(len)
     m_array = new int[len];
 }
 
+ArrayInt::ArrayInt(const std::initializer_list<int> &list) : ArrayInt(list.size())
+{
+    int cnt = 0;
+    for (auto &elem : list)
+    {
+        m_array[cnt] = elem;
+        cnt++;
+    }
+}
+
 ArrayInt::~ArrayInt()
 {
     delete [] m_array;
@@ -23,6 +33,25 @@ int& ArrayInt::operator[](const int& idx)
     assert(idx >= 0 && idx < m_len);
     return m_array[idx];
 }
+
+ArrayInt& ArrayInt::operator=(std::initializer_list<int> &list)
+{
+    if (list.size() != static_cast<size_t>(m_len))
+    {
+        delete [] m_array;
+        m_len = list.size();
+        m_array = new int[m_len];
+    }
+    int count = 0;
+    for (auto &element : list)
+    {
+        m_array[count] = element;
+        ++count;
+    }
+
+    return *this;
+}
+
 void ArrayInt::reallocate(const int& new_size)
 {
     assert(new_size >= 0);
