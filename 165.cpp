@@ -73,3 +73,13 @@ int main()
  
     return 0;
 }
+
+#include <iostream>
+ 
+int main()
+{
+    Child child;
+    Parent &parent = child;
+    // Вызов Parent::GetName() вместо переопределения Child::GetName()
+    std::cout << parent.Parent::getName() << std::endl;
+}
